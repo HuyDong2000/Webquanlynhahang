@@ -1,13 +1,12 @@
 <template>
   <img class="logo" src="../assets/logo.png" />
-  <h3>SignUp</h3>
+  <h3>Login</h3>
   <div class="register">
     <input type="text" placeholder="Enter Name ..." />
-    <input type="text" placeholder="Enter Email ..." />
     <input type="password" placeholder="Enter PassWord ..." />
-    <button v-on:click="signup">SinUp</button>
+    <button v-on:click="login">Login</button>
     <p>
-      <router-link to="/login">Login</router-link>
+      <router-link to="/sign-up">SignIn</router-link>
     </p>
   </div>
   
@@ -15,17 +14,16 @@
 <script>
 export default {
   props: {},
-  name: "SignUp",
+  name: "PageLogin",
   data() {
     return {
       name: "",
-      email: "",
       password: "",
     };
   },
   methods: {
-    signup() {
-      console.warn("SignUp");
+    login() {
+      this.$router.push({name:'PageHome'})
     },
   },
 };
